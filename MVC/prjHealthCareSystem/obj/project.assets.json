@@ -6129,11 +6129,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Prog7311\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
+      "projectUniqueName": "c:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Tuts\\Visual-Studio-MVC\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
       "projectName": "prjHealthCareSystem",
-      "projectPath": "c:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Prog7311\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
+      "projectPath": "c:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Tuts\\Visual-Studio-MVC\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
       "packagesPath": "C:\\Users\\Jessica van Heerden\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Prog7311\\MVC\\prjHealthCareSystem\\obj\\",
+      "outputPath": "c:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Tuts\\Visual-Studio-MVC\\MVC\\prjHealthCareSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cVIQUi/r10A=",
+  "dgSpecHash": "w3Hvfs3NQqw=",
   "success": true,
-  "projectFilePath": "c:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Prog7311\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
+  "projectFilePath": "c:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Tuts\\Visual-Studio-MVC\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jessica van Heerden\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Jessica van Heerden\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
