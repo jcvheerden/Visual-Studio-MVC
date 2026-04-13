@@ -5,6 +5,8 @@ namespace prjHealthCareSystem.Models{
 public class InsurancePolicy
 {
     public int Id { get; set; }
+    [Display(Name = "Policy Name")] 
+    public string PolicyName { get; set; }
     public int PatientId { get; set; }
     public Patient? Patient { get; set; }
 

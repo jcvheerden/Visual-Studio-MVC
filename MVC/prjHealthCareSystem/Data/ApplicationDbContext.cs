@@ -9,6 +9,6 @@ namespace prjHealthCareSystem.Data
 
         public DbSet<Patient> Patients { get; set; }
         public DbSet<InsurancePolicy> InsurancePolicies { get; set; }
-        public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<Appointment> Appointment { get; set; }
     }
 }
