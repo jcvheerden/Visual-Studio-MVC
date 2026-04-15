@@ -1,5 +1,0 @@
-SELECT TOP (1000) [Id]
-      ,[Name]
-      ,[ContactDetails]
-      ,[Region]
-  FROM [HealthCare].[dbo].[Patients]

@@ -1,1 +1,0 @@
-ALTER TABLE Appointments TO Appointment;

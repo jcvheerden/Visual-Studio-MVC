@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w3Hvfs3NQqw=",
+  "dgSpecHash": "4/sjbom8G7E=",
   "success": true,
-  "projectFilePath": "c:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Tuts\\Visual-Studio-MVC\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
+  "projectFilePath": "C:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Tuts\\Visual-Studio-MVC\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jessica van Heerden\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Jessica van Heerden\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
@@ -129,5 +129,30 @@
     "C:\\Users\\Jessica van Heerden\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.4\\system.security.cryptography.pkcs.9.0.4.nupkg.sha512",
     "C:\\Users\\Jessica van Heerden\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.6\\system.security.cryptography.protecteddata.9.0.6.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1901",
+      "level": "Warning",
+      "message": "Package 'NuGet.Packaging' 6.12.1 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
+      "projectPath": "C:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Tuts\\Visual-Studio-MVC\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Tuts\\Visual-Studio-MVC\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
+      "libraryId": "NuGet.Packaging",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1901",
+      "level": "Warning",
+      "message": "Package 'NuGet.Protocol' 6.12.1 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
+      "projectPath": "C:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Tuts\\Visual-Studio-MVC\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Jessica van Heerden\\OneDrive - ADvTECH Ltd (1)\\Tuts\\Visual-Studio-MVC\\MVC\\prjHealthCareSystem\\prjHealthCareSystem.csproj",
+      "libraryId": "NuGet.Protocol",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

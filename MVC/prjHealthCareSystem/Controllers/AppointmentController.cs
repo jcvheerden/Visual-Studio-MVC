@@ -17,7 +17,7 @@ namespace prjHealthCareSystem.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var appointment = _context.Appointments
+            var appointment = _context.Appointment
                 .Include(m => m.Policy)
                 .ThenInclude(p => p.Patient);
 
@@ -59,7 +59,7 @@ namespace prjHealthCareSystem.Controllers
         //Edit 
         public async Task<IActionResult> Edit(int? id)
         {
-            var appointment = await _context.Appointments.FindAsync(id);
+            var appointment = await _context.Appointment.FindAsync(id);
             ViewData["InsurancePolicyId"] = new SelectList(_context.InsurancePolicies,
                 "Id", "PolicyName", 
                 appointment.InsurancePolicyId);
@@ -86,7 +86,7 @@ namespace prjHealthCareSystem.Controllers
         //Delete 
         public async Task<IActionResult> Delete (int? id)
         {
-            var appointment = _context.Appointments
+            var appointment = _context.Appointment
                 .Include(m => m.Policy)
                 .FirstOrDefaultAsync(m => m.Id == id);
             return View(await appointment);
@@ -95,10 +95,10 @@ namespace prjHealthCareSystem.Controllers
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var appointment = await _context.Appointments.FindAsync(id);
+            var appointment = await _context.Appointment.FindAsync(id);
             if (appointment != null)
             {
-                _context.Appointments.Remove(appointment);
+                _context.Appointment.Remove(appointment);
             }
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -111,7 +111,7 @@ namespace prjHealthCareSystem.Controllers
             {
                 return NotFound();
             }
-            var appointment =  await _context.Appointments
+            var appointment =  await _context.Appointment
                 .Include(m => m.Policy)
                 .ThenInclude(p => p.Patient)
                 .FirstOrDefaultAsync(m => m.Id == id); 

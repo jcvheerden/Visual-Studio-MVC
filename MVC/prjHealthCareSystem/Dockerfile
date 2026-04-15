@@ -1,23 +1,21 @@
-FROM mcr.microsoft.com/dotnet/aspnet:10.0-nanoserver-ltsc2022 AS base
-WORKDIR /app
-EXPOSE 8080
-
-ENV ASPNETCORE_URLS=http://+:8080
-
-FROM mcr.microsoft.com/dotnet/sdk:10.0-nanoserver-ltsc2022 AS build
-ARG configuration=Release
+# Step 1: Use the .NET SDK image to build the app
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
-COPY ["prjHealthCareSystem/prjHealthCareSystem.csproj", "prjHealthCareSystem/"]
-RUN dotnet restore "prjHealthCareSystem\prjHealthCareSystem.csproj"
+
+# Copy the project file and restore dependencies
+COPY ["prjHealthCareSystem.csproj", "./"]
+RUN dotnet restore "./prjHealthCareSystem.csproj"
+
+# Copy the rest of the code and build the release
 COPY . .
-WORKDIR "/src/prjHealthCareSystem"
-RUN dotnet build "prjHealthCareSystem.csproj" -c $configuration -o /app/build
+RUN dotnet publish "prjHealthCareSystem.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
-FROM build AS publish
-ARG configuration=Release
-RUN dotnet publish "prjHealthCareSystem.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
-
-FROM base AS final
+# Step 2: Use the lighter ASP.NET runtime image to run the app
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/publish .
+
+# .NET 8 defaults to port 8080
+EXPOSE 8080 
+
 ENTRYPOINT ["dotnet", "prjHealthCareSystem.dll"]
