@@ -3,40 +3,29 @@ using prjHealthCareSystem.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 //Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// ---> ADD THESE LINES RIGHT HERE <---
-// Program.cs
+//This is new
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
-        sqlOptions => sqlOptions.EnableRetryOnFailure(
-            maxRetryCount: 5, // Try 5 times
-            maxRetryDelay: TimeSpan.FromSeconds(30), // Wait up to 30 seconds between retries
-            errorNumbersToAdd: null)
+        builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-
 var app = builder.Build();
 
-// Program.cs
+//This is new, this checks if your database is created or not.
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var logger = services.GetRequiredService<ILogger<Program>>();
-    
     try
     {
-        var context = services.GetRequiredService<ApplicationDbContext>();
-        
+        var context = services.GetRequiredService<ApplicationDbContext>();   
         // Give SQL Server 45 seconds to warm up in Docker
-        logger.LogInformation("Waiting 45 seconds for SQL Server to boot...");
-        Thread.Sleep(45000); 
+        logger.LogInformation("Waiting 10 seconds for SQL Server to boot...");
+        Thread.Sleep(10000); 
         
         context.Database.EnsureCreated();
         logger.LogInformation("Database and tables created successfully.");
@@ -57,9 +46,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
+// PDF file access
+app.UseStaticFiles();
 app.UseAuthorization();
-
 app.MapStaticAssets();
 
 app.MapControllerRoute(
